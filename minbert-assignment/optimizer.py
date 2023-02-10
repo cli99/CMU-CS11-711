@@ -46,8 +46,8 @@ class AdamW(Optimizer):
                 # initializing the state
                 if len(state) == 0:
                     state['step'] = 0
-                    state['exp_avg'] = torch.zeros(grad.shape)
-                    state['exp_avg_sq'] = torch.zeros(grad.shape)
+                    state['exp_avg'] = torch.zeros_like(grad)
+                    state['exp_avg_sq'] = torch.zeros_like(grad)
 
                 state['step'] += 1
                 # Access hyperparameters from the `group` dictionary
